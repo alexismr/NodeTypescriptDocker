@@ -1,0 +1,78 @@
+
+<div class="row">
+    <div class="col-md-3 filter"> 
+        <div class="card" >
+            <div class="card-body filter">
+             <h5 class="card-title ">Filtros</h5>
+         </div>
+         <div class="card" >
+             <div class="card-body">
+                 <div class="form-row">
+                        <label class="searchFilter"> </label>
+                        <label class="card-title title">Nombre del Hotel</label>
+                 </div>
+                <div class="form-row">
+                        <input [(ngModel)]="filterName"  name="thing" placeholder="Ingrese el nombre del hotel"
+                        type="text"> 
+                        <button type="button" class="btn btn-primary"  (click)="nameFilter()"  >Aceptar</button>
+                </div>
+
+            </div>
+         </div>
+         <div class="card">
+            <div class="card-body">
+                <div class="form-row">
+                        <label class="starFilter"></label>
+                        <label class="card-title title">Estrellas</label>
+                 </div>
+                <ul class="ulFilterstar">
+                  <li>
+                      <input type="checkbox" name="optionsStar"  class="checkboxfilter" (click)="starFilter(0)" />
+                      <label> Todas las estrellas </label>
+                     </li>
+                  <li *ngFor="let value of listStart">
+                      <input  class="checkboxfilter" type="checkbox"  (click)="starFilter(value)"/>
+                      <app-star class="starFilterList"   [starTotal]="value"> </app-star>
+                  </li>
+                </ul>
+               
+           
+            </div>
+         </div>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+            <!-- <div *ngIf="dataHospital.length <= 0" class="mt-4 row">
+                    <div class="col-12">
+                        <div class="alert alert-warning">
+                        no se encontraron registros
+                        </div>
+                    </div>
+                </div> -->
+
+            <div class="card hotel"  *ngFor="let item of dataHospital"> 
+                    <div class="card-body row">
+                       <div class="col-md-9 row"> 
+                          <div class="col-md-4 col-12"> 
+                             <img  [src]="'assets/images/'+ item.image"  class="hotelImg" >
+                          </div>
+                          <div class="col-md-8"> 
+                             <label class="title"> {{item.name}} </label> 
+                             <app-star [starTotal]="item.stars"> </app-star>
+                             <app-aminities [listAmenities]="item.amenities"> </app-aminities>
+                         </div>
+                       </div>
+                       <div class="vertical_dotted_line"></div>
+                       <div class="col-md-3 text-center">                  
+                          <p class="text-center">Precio por noche por Habitacion</p>
+                          <label class="price"> <span class="ars">ARS </span>  <strong class="arsvalue"> {{item.price | number}} </strong> </label>
+                          <div class="col-sm-12">
+                                <button type="button" class="btn btn-primary btn-lg btn-block">Ver Hotel</button>
+                          </div>
+                          
+                       </div>
+                    </div>
+           </div>
+    </div>
+</div>
