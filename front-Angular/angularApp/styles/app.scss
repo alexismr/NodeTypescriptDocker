@@ -20,7 +20,7 @@ a {
     height: 20px;
 }
 .starFilter {
-    background-image: url(assets/icons/filters/star.svg);
+    background-image: url(assets/icons/filters/starblue.svg);
     width: 20px;
     height: 20px;
 }
@@ -91,6 +91,9 @@ a {
     margin-right: 6px;
 }
 
+.aceptarName {
+    margin-left: 6px;
+}
 
 
 
@@ -117,3 +120,6 @@ a {
     padding-left: 0;
 }
 
+$theme-colors: (
+  "primary": #0b2b47
+);

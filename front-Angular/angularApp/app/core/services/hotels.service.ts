@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Configuration } from './../../app.constants';
+import { IOperation } from '../../interfaces/operation.interface';
 
 @Injectable()
 export class HotelService {
@@ -16,8 +17,8 @@ export class HotelService {
     getAll(): Observable<any[]> {
         return this.http.get<any[]>(this.actionUrl);
     }
-    getFilters(start:number ,name?:string   ): Observable<any[]> {
-        return this.http.get<any[]>(this.actionUrl + '/'+start +'/'+name);
+    getFilters(start:number ,name?:string   ): Observable<IOperation[]> {
+        return this.http.get<IOperation[]>(this.actionUrl + '/'+start +'/'+name);
     }
 
 }
