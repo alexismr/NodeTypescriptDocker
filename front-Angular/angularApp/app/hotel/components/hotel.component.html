@@ -5,41 +5,42 @@
             <div class="card-body filter">
              <h5 class="card-title ">Filtros</h5>
          </div>
-         <div class="card" >
-             <div class="card-body">
-                 <div class="form-row">
-                        <label class="searchFilter"> </label>
-                        <label class="card-title title">Nombre del Hotel</label>
-                 </div>
-                <div class="form-row">
-                        <input [(ngModel)]="filterName"  name="thing" placeholder="Ingrese el nombre del hotel"
-                        type="text"> 
-                        <button type="button" class="btn btn-primary aceptarName"  (click)="nameFilter()"  >Aceptar</button>
-                </div>
-
-            </div>
-         </div>
-         <div class="card">
-            <div class="card-body">
-                <div class="form-row">
-                        <label class="starFilter"></label>
-                        <label class="card-title title">Estrellas</label>
-                 </div>
-                <ul class="ulFilterstar">
-                  <li>
-                      <input type="checkbox" name="optionsStar"  class="checkboxfilter" (click)="starFilter(0)" />
-                      <label> Todas las estrellas </label>
-                     </li>
-                  <li *ngFor="let value of listStart">
-                      <input  class="checkboxfilter" type="checkbox"  (click)="starFilter(value)"/>
-                      <app-star class="starFilterList"   [starTotal]="value"> </app-star>
-                  </li>
-                </ul>
-               
-           
-            </div>
-         </div>
         </div>
+        <div class="card" >
+                <div class="card-body">
+                    <div class="form-row">
+                           <label class="searchFilter"> </label>
+                           <label class="card-title title">Nombre del Hotel</label>
+                    </div>
+                   <div class="form-row">
+                           <input [(ngModel)]="filterName"  name="thing" placeholder="Ingrese el nombre del hotel"
+                           type="text"> 
+                           <button type="button" class="btn btn-primary aceptarName"  (click)="nameFilter()"  >Aceptar</button>
+                   </div>
+   
+               </div>
+            </div>
+            <div class="card">
+               <div class="card-body">
+                   <div class="form-row">
+                           <label class="starFilter"></label>
+                           <label class="card-title title">Estrellas</label>
+                    </div>
+                   <ul class="ulFilterstar">
+                     <li>
+                         <input type="checkbox" name="optionsStar"  class="checkboxfilter" (click)="starFilter(0)" />
+                         <label> Todas las estrellas </label>
+                        </li>
+                     <li *ngFor="let value of listStart">
+                         <input  class="checkboxfilter" type="checkbox"  (click)="starFilter(value)"/>
+                         <app-star class="starFilterList"   [starTotal]="value"> </app-star>
+                     </li>
+                   </ul>
+                  
+              
+               </div>
+            </div>
+        
     </div>
 
     <div class="col-md-9">
