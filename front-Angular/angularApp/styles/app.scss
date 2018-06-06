@@ -1,4 +1,4 @@
-
+@import "colores";
 body {
     background-color: #e4e4e9;
 }
@@ -8,21 +8,24 @@ ul {
 }
 
 a {
-    color: #03A9F4;
+    color: $azulClaro;
 }
 .header {
-    background-color: #103c7b; 
+    background-color: $azulOscuro; 
 }
 
 .searchFilter {
     background-image: url(assets/icons/filters/search.svg);
     width: 20px;
     height: 20px;
+    margin-right: 8px;
+
 }
 .starFilter {
     background-image: url(assets/icons/filters/starblue.svg);
     width: 20px;
     height: 20px;
+    margin-right: 8px;
 }
 
 
@@ -57,7 +60,7 @@ a {
 }
 
 .title {
-    color: #35a9bd;
+    color: $azulClaro;
     font-size: 12pt;
 }
 
@@ -67,7 +70,7 @@ a {
 }
 
 .filter {
-    padding-right: 0px;
+    margin-bottom: 12px;
 }
 
 .card-body.filter{
@@ -80,12 +83,12 @@ a {
 
 .ars{
     font-size: 26px;
-    color: #d6690a;
+    color: $arsColor;
 }
 
 .arsvalue{
     font-size: 32px;
-    color: #d6690a;
+    color: $arsColor;
 }
 .checkboxfilter{
     margin-right: 6px;
@@ -95,7 +98,9 @@ a {
     margin-left: 6px;
 }
 
-
+.visibleFilter {
+    display: inline;
+}
 
 @media screen  and (min-width: 701px){
     .vertical_dotted_line
@@ -104,7 +109,9 @@ a {
         border-left: 2px dotted rgb(153, 151, 151);
         min-height: 100px;
     } 
-    
+   
+
+
 }
 
 @media screen and (max-width: 700px) and (min-width: 300px) 
@@ -115,11 +122,44 @@ a {
         border-left: 0px;
         min-width: 100%;
     } 
+    .filterMain{
+        display: table;
+        margin: auto;
+        color: $azulClaro;
+    }
 }
 .ulFilterstar{
     padding-left: 0;
+ 
 }
 
-$theme-colors: (
-  "primary": #0b2b47
-);
+
+.filter-collapse.col:after {
+    transform: rotate(0deg);
+ }
+
+ .filter-collapse:after {
+    transition: transform .35s ease, opacity .35s ease;
+    opacity: .5;
+    
+ }
+ .filter-collapse::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+    background: inherit;
+    color: $azulClaro;
+ }
+
+ .filter-collapse:after {
+    transform: rotate(-180deg);
+ }
+
+ 

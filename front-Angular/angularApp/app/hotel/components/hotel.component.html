@@ -1,18 +1,25 @@
 
 <div class="row">
     <div class="col-md-3 filter"> 
-        <div class="card" >
+        <div class="card" data-toggle="collapse" data-target="#collapseFilterMain"  (click)="mainfilter = !mainfilter">
             <div class="card-body filter">
-             <h5 class="card-title ">Filtros</h5>
+             <label class="card-title filterMain ">Filtros  <i class="filter-collapse visibleFilter" [ngClass]="{'col': mainfilter}"  > </i></label>
          </div>
         </div>
-        <div class="card" >
+        <div class="collapse show" id="collapseFilterMain">
+            <div class="card"  >
                 <div class="card-body">
-                    <div class="form-row">
-                           <label class="searchFilter"> </label>
-                           <label class="card-title title">Nombre del Hotel</label>
+                    <div class="row" data-toggle="collapse" data-target="#collapseFilterName" (click)="nombreFilter = !nombreFilter">
+                         <div class="col-10 form-row ">
+                            <label class="searchFilter"> </label>
+                            <label class="card-title title">Nombre del Hotel</label>
+                         </div>
+                        <div class="col-2">
+                         <a>   <i class="filter-collapse "  [ngClass]="{'col': nombreFilter}"  > </i></a> 
+                        </div>
+                       
                     </div>
-                   <div class="form-row">
+                   <div class="form-row collapse show"  id="collapseFilterName">
                            <input [(ngModel)]="filterName"  name="thing" placeholder="Ingrese el nombre del hotel"
                            type="text"> 
                            <button type="button" class="btn btn-primary aceptarName"  (click)="nameFilter()"  >Aceptar</button>
@@ -22,11 +29,19 @@
             </div>
             <div class="card">
                <div class="card-body">
-                   <div class="form-row">
+                   <div class="row" data-toggle="collapse" data-target="#collapseStar" (click)="starcollapseFilter = !starcollapseFilter">
+                    <div class="col-10 form-row ">
                            <label class="starFilter"></label>
                            <label class="card-title title">Estrellas</label>
+                     </div>
+                     <div class="col-2">
+                        <i class="filter-collapse "  [ngClass]="{'col': starcollapseFilter}"  > </i>
+                     </div>
+                          
+        
                     </div>
-                   <ul class="ulFilterstar">
+                 
+                   <ul class="ulFilterstar collapse show" id="collapseStar">
                      <li>
                          <input type="checkbox" name="optionsStar"  class="checkboxfilter" (click)="starFilter(0)" />
                          <label> Todas las estrellas </label>
@@ -40,17 +55,19 @@
               
                </div>
             </div>
+        </div>
+          
         
     </div>
 
     <div class="col-md-9">
-            <!-- <div *ngIf="dataHospital.length <= 0" class="mt-4 row">
+            <div *ngIf=" dataHospital && dataHospital.length <= 0" class="mt-4 row">
                     <div class="col-12">
                         <div class="alert alert-warning">
                         no se encontraron registros
                         </div>
                     </div>
-                </div> -->
+                </div>
 
             <div class="card hotel"  *ngFor="let item of dataHospital"> 
                     <div class="card-body row">

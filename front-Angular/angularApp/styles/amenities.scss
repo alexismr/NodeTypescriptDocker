@@ -1,117 +1,78 @@
-
-.bathrobes {
-    background-image: url(assets/icons/amenities/bathrobes.svg);
+@mixin amenities
+{
     width: 20px;
     height: 20px;
     display: inline-block;
     background-repeat: no-repeat;
 }
+
+.bathrobes {
+    background-image: url(assets/icons/amenities/bathrobes.svg);
+    @include amenities;
+}
 .bathtub{
     background-image: url(assets/icons/amenities/bathtub.svg);
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-repeat: no-repeat;
+    @include amenities;
 }
 
 .beach-pool-facilities{
     background-image: url(assets/icons/amenities/beach-pool-facilities.svg);
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-repeat: no-repeat;
+    @include amenities;
 }
 .beach{
     background-image: url(assets/icons/amenities/beach.svg);
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-repeat: no-repeat;
+    @include amenities;
 }
 
 .business-center{
     background-image: url(assets/icons/amenities/business-center.svg);
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-repeat: no-repeat;
+    @include amenities;
 }
 .children-club{
     background-image: url(assets/icons/amenities/children-club.svg);
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-repeat: no-repeat;
+    @include amenities;
 }
 
 .coffe-maker{
     background-image: url(assets/icons/amenities/coffe-maker.svg);
-    width: 20px;
-    height: 20px;
-    display: inline-block;
+    @include amenities;
 }
 .deep-soaking-bathtub{
     background-image: url(assets/icons/amenities/deep-soaking-bathtub.svg);
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-repeat: no-repeat;
+    @include amenities;
 }
 
 .fitness-center{
     background-image: url(assets/icons/amenities/fitness-center.svg);
-    width: 20px;
-    height: 20px;
-    display: inline-block;
+    @include amenities;
 }
 .kitchen-facilities{
     background-image: url(assets/icons/amenities/kitchen-facilities.svg);
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-repeat: no-repeat;
+    @include amenities;
 }
 .newspaper{
     background-image: url(assets/icons/amenities/newspaper.svg);
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-repeat: no-repeat;
+    @include amenities;
 }
 
 .nightclub{
     background-image: url(assets/icons/amenities/nightclub.svg);
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-repeat: no-repeat;
+    @include amenities;
 }
 
 .restaurant{
     background-image: url(assets/icons/amenities/restaurant.svg);
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-repeat: no-repeat;
+    @include amenities;
 }
 .safety-box{
     background-image: url(assets/icons/amenities/safety-box.svg);
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-repeat: no-repeat;
+    @include amenities;
 }
 .separate-bredroom{
     background-image: url(assets/icons/amenities/separate-bredroom.svg);
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-repeat: no-repeat;
+    @include amenities;
 }
 .sheets{
     background-image: url(assets/icons/amenities/sheets.svg);
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-repeat: no-repeat;
+    @include amenities;
 }
