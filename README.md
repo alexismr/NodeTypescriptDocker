@@ -50,3 +50,4 @@
 			- **webpack.prod.js** _compilacion entorno produccion_
 		- **webpack.config.js** _configuracion inicio webpack_
   
+## Node soporte  con typescript
