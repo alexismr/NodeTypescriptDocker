@@ -34,31 +34,23 @@ class HotelRouter {
         }
     }
     create(req, res) {
-        // const firstName: string = req.body.firstName;
-        // const lastName: string = req.body.lastName;
-        // const username: string = req.body.username;
-        // const email: string = req.body.email;
-        // const password: string = req.body.password;
-        console.log(req.body);
-        // const user = new User({
-        //   firstName,
-        //   lastName,
-        //   username,
-        //   email,
-        //   password
-        // });
-        // user.save()
-        // .then((data) => {
-        //   res.status(201).json({ data });
-        // })
-        // .catch((error) => {
-        //   res.status(500).json({ error });
-        // });
+        this._hotlService.create(req.body[0]);
     }
     update(req, res) {
         const id = req.params.id;
-        console.log('rutas' + req.body);
-        //let response = this._hotlService.update(id ,req.body);
+        let response = this._hotlService.update(id, req.body[0]);
+        if (response) {
+            res.status(200).json({
+                ok: true,
+                mensaje: 'operacion exitosa'
+            });
+        }
+        else {
+            res.status(400).json({
+                ok: true,
+                mensaje: 'error al  actualizar el hotel'
+            });
+        }
     }
     delete(req, res) {
         const id = req.params.id;

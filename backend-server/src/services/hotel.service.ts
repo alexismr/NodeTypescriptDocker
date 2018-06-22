@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import { HotelModel } from '../model/hotel';
 
 export default  class HotelService {
     private _jsonMock: any ;
@@ -27,19 +28,26 @@ export default  class HotelService {
         return  status;
     }
 
-    update(id: string , request:any ):boolean{
+     create(data:HotelModel){
+         let auxi = new HotelModel(data);
+         this._jsonMock.push(auxi);
+     }
+
+    update(id: string , request:HotelModel ):boolean{
          let element = this._jsonMock.filter(item =>{
              return item.id === id;
          })[0];
-         const index = this._jsonMock.indexOf(element);
-         const keys = Object.keys(request.body);
-         console.log(keys);
-         keys.forEach( key => element[key] = request.body[key]);
-         this._jsonMock[index] = element;
-         return true;
+         if(element.length > 0){
+            const index = this._jsonMock.indexOf(element);
+            const keys = Object.keys(request);
+            console.log(keys);
+            keys.forEach( key => element[key] = request[key]);
+            this._jsonMock[index] = element;
+            return true;
+         }
+    
+         return false;;
      }
-
-   
 
      searchDelegate(arr, s){
       var matches = [], i; 

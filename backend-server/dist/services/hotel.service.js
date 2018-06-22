@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = require("fs");
+const hotel_1 = require("../model/hotel");
 class HotelService {
     constructor() {
         this.LoadData()
@@ -35,16 +36,24 @@ class HotelService {
         });
         return status;
     }
+    create(data) {
+        let auxi = new hotel_1.HotelModel(data);
+        this._jsonMock.push(auxi);
+    }
     update(id, request) {
         let element = this._jsonMock.filter(item => {
             return item.id === id;
         })[0];
-        const index = this._jsonMock.indexOf(element);
-        const keys = Object.keys(request.body);
-        console.log(keys);
-        keys.forEach(key => element[key] = request.body[key]);
-        this._jsonMock[index] = element;
-        return true;
+        if (element.length > 0) {
+            const index = this._jsonMock.indexOf(element);
+            const keys = Object.keys(request);
+            console.log(keys);
+            keys.forEach(key => element[key] = request[key]);
+            this._jsonMock[index] = element;
+            return true;
+        }
+        return false;
+        ;
     }
     searchDelegate(arr, s) {
         var matches = [], i;

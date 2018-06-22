@@ -1,6 +1,7 @@
 
 import { Request, Response, Router } from 'express';
 import HotelService  from '../services/hotel.service';
+import { HotelModel } from '../model/hotel';
 
 class HotelRouter {
   public router: Router;
@@ -39,40 +40,30 @@ class HotelRouter {
       });
    }
 
-
   }
 
   public create(req: Request, res: Response): void {
-    // const firstName: string = req.body.firstName;
-    // const lastName: string = req.body.lastName;
-    // const username: string = req.body.username;
-    // const email: string = req.body.email;
-    // const password: string = req.body.password;
-    console.log(req.body);
-    // const user = new User({
-    //   firstName,
-    //   lastName,
-    //   username,
-    //   email,
-    //   password
-    // });
-
-    // user.save()
-    // .then((data) => {
-    //   res.status(201).json({ data });
-    // })
-    // .catch((error) => {
-    //   res.status(500).json({ error });
-    // });
-
+     this._hotlService.create(req.body[0]);
   }
 
   public update(req: Request, res: Response): void {
     const id: string = req.params.id;
+    let response = this._hotlService.update(id ,req.body[0]);
 
-    console.log('rutas' + req.body )
-    //let response = this._hotlService.update(id ,req.body);
+    if(response) {
+      res.status(200).json({
+        ok: true,
+        mensaje: 'operacion exitosa'
+      });
+    }
+    else{
+      res.status(400).json({
+        ok: true,
+        mensaje: 'error al  actualizar el hotel'
+      });
+    }
 
+    
   }
 
   public delete(req: Request, res: Response): void {
