@@ -5,18 +5,18 @@
 ### 1)  clonar el proyecto rama master 
 
 ```git
-     git clone (repo) https://github.com/alexismr/almundotest.git
+     git clone (repo) https://github.com/alexismr/NodeTypescriptDocker.git
 ```
 ### 2)  backend
 
 ```sh
-    ubicarse en el repositorio  almundotest\backend-server
+    ubicarse en el repositorio  ..\backend-server
     ejecutar el comando npm run  install
     ejecutar el comando npm  run start  
 ```
 ### 3)  frontend
 ```sh
-    ubicarse en el repositorio  almundotest\front-Angular
+    ubicarse en el repositorio  ..\front-Angular
     ejecutar el comando npm run  install
     ejecutar el comando npm  run start 
     la aplicacion se ejecutara  en http://localhost:8080/
