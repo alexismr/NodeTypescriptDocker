@@ -16,7 +16,7 @@
     "@types/node": "7.0.22",
     "body-parser": "^1.18.3",
     "concurrently": "^3.5.1",
-    "express": "4.15.3",
+    "express": "4.17.3",
     "cors": "^2.8.4"
   },
   "devDependencies": {
